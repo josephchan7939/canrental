@@ -1,0 +1,74 @@
+"use client";
+
+import {motion } from 'framer-motion';
+import {fadeIn} from '/variant';
+import Image from "next/image";
+
+export default function Cta() {
+    return <section className=" max-h-fit pt-24 xl:pt-48 flex items-end pb-0 overflow-hidden" id='contact'>
+        <div className=' container mx-auto'>
+          <div className='flex flex-col md:flex-row xl:items-center'>
+             <div className='flex-1 xl:ml-24 text-center md:text-left
+             mb-12 md:mb-0 order-none'> 
+                <div className='max-w-[520px] mx-auto'>
+                 <motion.h2 
+             variants={fadeIn('right',0.2)}
+             initial='hidden'
+             whileInView={'show'}
+             viewport={{once:false,amount:0.6}}                    
+                 className='h2'>Download our app now and hit the road with ease 
+                 </motion.h2>
+                 <motion.p 
+             variants={fadeIn('up',0.4)}
+             initial='hidden'
+             whileInView={'show'}
+             viewport={{once:false,amount:0.6}}                    
+                 className=' mb-10'>
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                   Istecupiditate ducimus beatae qui nam  vero illum accusamus,
+                   ipsamofficiis magni.
+
+                 </motion.p>
+                 <motion.div 
+                     variants={fadeIn('right',0.6)}
+                     initial='hidden'
+                     whileInView={'show'}
+                     viewport={{once:false,amount:0.6}}   
+                      className='flex gap-x-3 justify-center md:justify-start'>
+                    <button className='btn-cta'>
+                    <Image 
+                   src={'icons/buttons/google-play.svg'} 
+                   width={132} 
+                   height={36} 
+                   alt=''/>
+                   </button>
+                   <button className='btn-cta'>
+                    <Image 
+                   src={'icons/buttons/app-store.svg'} 
+                   width={132} 
+                   height={36} 
+                   alt=''/>
+                   </button>
+                 </motion.div>
+                </div>
+             </div>
+             <motion.div 
+                 variants={fadeIn('left',0.8)}
+                 initial='hidden'
+                 whileInView={'show'}
+                 viewport={{once:false,amount:0.2}}   
+             className='flex-1 flex justify-center order-1 md:order-none'>
+              <Image 
+               src={'/images/cta/phone.svg'}    
+               width={320}
+               height={640}
+               alt=''
+              />
+             </motion.div>
+
+
+          </div>
+
+        </div>
+        </section>;
+ }
